@@ -1,0 +1,22 @@
+{
+    "profiles": [
+        {
+            "src_container":"dst",
+            "dst_container":"src1",
+            "dst_ip":"192.168.1.2",
+            "flows" : [
+                { "start_time":0, "end_time":10, "num_flows":5 },
+                { "start_time":10, "end_time":30, "num_flows":15 }
+            ]
+        },
+        {
+            "src_container":"src1",
+            "dst_container":"dst",
+            "dst_ip":"145.12.131.92",
+            "flows" : [
+                { "start_time":0, "end_time":10, "num_flows":5 },
+                { "start_time":10, "end_time":30, "num_flows":15 }
+            ]
+        }
+    ]
+}

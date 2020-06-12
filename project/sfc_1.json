@@ -1,0 +1,29 @@
+{
+    "NF_CHAIN":["fw", "nat"],
+    "chain_id" : 1,
+    "nat" : {
+        "image" : "nat",
+        "interfaces" : ["eth0", "eth1"],
+        "init_script" : "/init_nat.sh"
+    },
+    "fw": {
+        "image" : "fw",
+        "interfaces" : ["eth0", "eth1"],
+        "init_script" : "/init_fw.sh"
+    },
+    "SRC":{
+        "MAC" : "00:00:00:00:00:01",
+        "SWITCH_DPID" : 1,
+        "PORT" : 2,
+        "IP" : "192.168.1.2",
+        "CONTAINER_NAME" : "src"
+    },
+    "DST" : {
+        "MAC" : "00:00:00:00:01:02",
+        "SWITCH_DPID" : 2,
+        "PORT" : 2,
+        "IP" : "145.12.131.92",
+        "CONTAINER_NAME" : "dst"
+    }
+
+}
