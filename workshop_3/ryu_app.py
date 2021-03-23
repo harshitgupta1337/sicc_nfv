@@ -7,23 +7,52 @@ from ryu.lib.packet.packet import Packet
 from ryu.lib.packet.ethernet import ethernet
 from ryu.lib.packet.arp import arp
 from ryu.ofproto import ether
-from ryu.lib.mac import haddr_to_bin
+
+import sys
+sys.path.append("../workshop_3/")
 from workshop_parent import WorkshopParent
 
-NF_MACS = ["00:00:00:00:02:01", "00:00:00:00:02:02"]
-SRC_MAC = "00:00:00:00:01:01"
-DST_MAC = "00:00:00:00:01:02"
+# Description of traffic endpoints for the Network Function 
+'''
+DST = {
+    "IN_MAC" : "",
+    "IN_PORT" : ,
+    "IP" : ""
+}
 
-SRC_IP = "192.168.1.2"
-DST_IP = "145.12.131.92"
-NF_IN_PORT = 3
-NF_OUT_PORT = 4
-SRC_PORT = 1
-DST_PORT = 2
+SRC = {
+    "OUT_MAC" : "",
+    "OUT_PORT" : ,
+    "IP" : ""
+}
+'''
+# Description of NF instances
+# NF Instance 1
+NF_1 = {
+    "IN_MAC" : "",
+    "OUT_MAC" : "",
+    "SWITCH_DPID" : ,
+    "IN_PORT" : ,
+    "OUT_PORT" : 
+}
 
-class Workshop3(WorkshopParent):
+# NF Instance 2
+NF_2 = {
+    "IN_MAC" : "",
+    "OUT_MAC" : "",
+    "SWITCH_DPID" : ,
+    "IN_PORT" : ,
+    "OUT_PORT" : 
+}
+
+# Pool of NF Instances
+NF_POOL = [NF_1, NF_2]
+
+class Workshop4(WorkshopParent):
+
     def __init__(self, *args, **kwargs):
-        super(Workshop3, self).__init__(*args, **kwargs)
+        super(Workshop4, self).__init__(*args, **kwargs)
+        print ("Initializing RYU controller app for Workshop 4")
 
     # Function to handle packets belonging to ARP protocol
     def handle_arp(self, datapath, packet, ether_frame, in_port):
@@ -31,7 +60,7 @@ class Workshop3(WorkshopParent):
 
         if arp_packet.opcode == 1: # Send an ARP Response for the incoming Request
             # Determine the MAC Address for IP Address being looked up
-            # Determine the out port to send the ARP Response
+            # Determine the out port to send the ARP Response 
 
             ''' Your code here '''
 
