@@ -9,7 +9,7 @@ from ryu.lib.packet.arp import arp
 from ryu.ofproto import ether
 
 import sys
-sys.path.append("../workshop_3/")
+sys.path.append("../workshop_2/")
 from workshop_parent import WorkshopParent
 
 # Description of traffic endpoints for the Network Function 

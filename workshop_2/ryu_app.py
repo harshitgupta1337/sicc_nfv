@@ -21,9 +21,9 @@ NF_OUT_PORT = 4
 SRC_PORT = 1
 DST_PORT = 2
 
-class Workshop3(WorkshopParent):
+class Workshop2(WorkshopParent):
     def __init__(self, *args, **kwargs):
-        super(Workshop3, self).__init__(*args, **kwargs)
+        super(Workshop2, self).__init__(*args, **kwargs)
 
     # Function to handle packets belonging to ARP protocol
     def handle_arp(self, datapath, packet, ether_frame, in_port):
